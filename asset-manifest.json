@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/lazare16/Snake-Game/static/css/main.f890d68c.css",
+    "main.js": "/lazare16/Snake-Game/static/js/main.9e2434c0.js",
+    "static/media/logo.svg": "/lazare16/Snake-Game/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/lazare16/Snake-Game/index.html",
+    "main.f890d68c.css.map": "/lazare16/Snake-Game/static/css/main.f890d68c.css.map",
+    "main.9e2434c0.js.map": "/lazare16/Snake-Game/static/js/main.9e2434c0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f890d68c.css",
+    "static/js/main.9e2434c0.js"
+  ]
+}
