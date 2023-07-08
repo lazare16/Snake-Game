@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
 const Canvas = () => {
   const canvasRef = useRef(null);
@@ -10,6 +10,7 @@ const Canvas = () => {
   const heightInBlocks = Height / blockSize;
 
   let score = 0;
+  let intervalDuration = 100; // Initial interval duration in milliseconds
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -118,6 +119,8 @@ const Canvas = () => {
       if (newHead.equal(apple.position)) {
         score++;
         apple.move();
+        // Increase the game speed by reducing the interval duration
+        intervalDuration *= 0.9; // Decrease interval duration by 10%
       } else {
         this.segments.pop();
       }
@@ -129,7 +132,7 @@ const Canvas = () => {
       const rightCollision = head.col === widthInBlocks - 1;
       const bottomCollision = head.row === heightInBlocks - 1;
       const wallCollision = leftCollision || topCollision || rightCollision || bottomCollision;
-      const selfCollision = false;
+      let selfCollision = false;
 
       for (let i = 0; i < this.segments.length; i++) {
         if (head.equal(this.segments[i])) {
@@ -176,7 +179,7 @@ const Canvas = () => {
       snake.draw();
       apple.draw();
       drawBorder(context, Width, Height, blockSize);
-    }, 100);
+    }, intervalDuration); // Use the variable intervalDuration to control the interval speed
 
     const directions = {
       37: "left",
@@ -204,6 +207,7 @@ const Canvas = () => {
 };
 
 export default Canvas;
+
 
 
 
